@@ -1,8 +1,8 @@
 ---
-name: "Bug report \U0001F41B"
-about: Comportement inattendu et problématique !
-title: "\U0001F41B [BUG] : "
-labels: bug
+name: "Fix Me ! \U0001FA79"
+about: Problème léger qui n'empêche pas l'app de fonctionner correctement
+title: "\U0001FA79 [FIX ME] : "
+labels: fixme
 assignees: ''
 
 ---
@@ -10,10 +10,6 @@ assignees: ''
 ## Description
 
 <!-- Description du bug -->
-
-## Comportement attendu
-
-<!-- Précisez ici quel serait le comportement attendu -->
 
 ## Reproduire
 
