@@ -1,13 +1,10 @@
-[![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)](https://www.figma.com/file/PiMB3FU3OJfZZK9bdgXQIP/Maquette-Admiralis?node-id=5%3A56&t=d4sRuKOOl4Ix2w54-1)
-[![Jira](https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=Jira&logoColor=white)](https://admiralis.atlassian.net/jira/software/projects/ADMIRALIS/boards/1)
-[![Github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Admiralis)
-![Docker](https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white)
+
 
 # Admiralis 🐙
 
 > ⚠️ Ce projet est encore en cours de développement ! ⚠️
 
-Admiralis est un projet de gestion de parc informatique à destination des organismes de formation.
+Admiralis est un outil d'orchestration de parc informatique à destination des organismes de formation.
 
 Il se base sur l'usage et les besoins de gestion de matériel des techniciens en charge de ces missions.
 
@@ -17,29 +14,6 @@ Il a 4 fonctionnalités princpiales :
 - Visualiser et gérer le stock
 
 Il dispose d'une version mobile et web (Progressive Web App).
-
-## Technologies 💻
-
-### FRONT
-
-![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
-![NodeJS](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![Ionic](https://img.shields.io/badge/Ionic-3880FF?style=for-the-badge&logo=ionic&logoColor=white)
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-
-![Nginx](https://img.shields.io/badge/nginx-%23009639.svg?style=for-the-badge&logo=nginx&logoColor=white)
-
-
-### BACK
-
-![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white)
-![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white)
-
-![Nginx](https://img.shields.io/badge/nginx-%23009639.svg?style=for-the-badge&logo=nginx&logoColor=white)
-
-## Architecture
-
-![diagram](https://user-images.githubusercontent.com/94178423/229276196-626e187d-5138-4693-929e-5b26971a3dbe.png)
 
 ## Story Telling 📖
 
@@ -61,3 +35,59 @@ Bien que je sois aujourd'hui développeur et que j'ai changé d'entreprise, je s
 J'ai donc décidé de me lancer un nouveau challenge, en créant cette fois une vraie application !
 
 Cette application représente d'une certaine manière mon témoin de progression : au fur et à mesure que j'apprend, je met en pratique mes nouvelles connaissances.
+
+## Roadmap
+
+![roadmap](https://user-images.githubusercontent.com/94178423/236791076-7da221ea-4d8e-42d9-a043-ba02d4ea2533.png)
+
+
+## Ressources
+
+- [![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)](https://www.figma.com/file/PiMB3FU3OJfZZK9bdgXQIP/Maquette-Admiralis?node-id=5%3A56&t=d4sRuKOOl4Ix2w54-1)
+- [![Jira](https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=Jira&logoColor=white)](https://admiralis.atlassian.net/jira/software/projects/ADMIRALIS/boards/1)
+- [![Github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Admiralis)
+- ![Docker](https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white)
+
+## Architecture
+
+![Diagram](https://user-images.githubusercontent.com/94178423/236791360-1af296dd-e2d5-4f34-b7ed-e2cbf3b5cd73.png)
+
+Admiralis propose une architecture "microservices" : 
+
+- 3 API distinctes en Spring Boot permettent l'accès aux données sur les BDD MongoDB.
+- L'IHM est codé en TypeScript via le framework Ionic React. L'application sera donc disponible sur mobile et sur Android.
+  - La version web sera servie par un conteneur Nginx
+  - La version mobile pourra être installée directement sur le support via un .apk
+- Une gateway permet d'assurer la communication entre le front et les différents services.
+
+Un fichier docker-compose permettra de monter rapidement la stack applicative, basée sur les build des différents services sous forme d'images docker.
+Un manifeste Kubernetes est prévu.
+
+Le choix de cette architecture permet d'offrir une grande modularité et permettra de développer les besoins futurs  efficacement : les différents services pourront être spécialisés, utilisant les meilleures technologies possibles en fonction des besoins.
+En outre, les services existants pourront évoluer ou être remplacés en fonction de l'évolution du besoin métier.
+
+Une fois déployé sur une plateforme cloud, l'application offira une haute disponibilité et scalabilité grâce à Kubernetes
+
+## Technologies 💻
+
+### FRONT END
+
+
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![NodeJS](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Ionic](https://img.shields.io/badge/Ionic-3880FF?style=for-the-badge&logo=ionic&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+
+![Nginx](https://img.shields.io/badge/nginx-%23009639.svg?style=for-the-badge&logo=nginx&logoColor=white)
+
+![image](https://user-images.githubusercontent.com/94178423/236792027-6969ebfb-058b-4139-a616-888bfca4195f.png)
+
+
+### BACK END
+
+![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white)
+![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white)
+
+![Nginx](https://img.shields.io/badge/nginx-%23009639.svg?style=for-the-badge&logo=nginx&logoColor=white)
+
+![image](https://user-images.githubusercontent.com/94178423/236792232-1373c3b7-d662-4bf8-bb3f-c8e4cbabe755.png)
